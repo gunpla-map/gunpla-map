@@ -1,0 +1,26 @@
+name: Rename uploaded files
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rename uploaded files
+        run: |
+          git config user.name "gunpla-map"
+          git config user.email "gunpla-map@users.noreply.github.com"
+          mv ganpurafan-mai-dian-matupu-yi-bie-matome.html index.html
+          mv jrshang-da-gang-yi-ganpurafan-mai-dian-matupu.html kamiooka.html
+          mv jrjin-mi-ting-yi-ganpurafan-mai-dian-matupu.html kinshicho.html
+          mv jryu-du-gong-yi-ganpurafan-mai-dian-matupu.html utsunomiya.html
+          git add -A
+          git status --porcelain
+          git commit -m "新規3エリア（上大岡・錦糸町・宇都宮）を追加、まとめを11エリア・50店に更新"
+          git push
