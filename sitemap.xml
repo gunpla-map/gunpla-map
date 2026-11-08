@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://gunpla-map.github.io/gunpla-map/</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/kawasaki.html</loc></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/kawasaki.html</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://gunpla-map.github.io/gunpla-map/sakuragicho.html</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/yokohama.html</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/ueno.html</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/akihabara.html</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/shinjuku.html</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/shibuya.html</loc></url>
-  <url><loc>https://gunpla-map.github.io/gunpla-map/ikebukuro.html</loc></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/yokohama.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/ueno.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/akihabara.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/shinjuku.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/shibuya.html</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://gunpla-map.github.io/gunpla-map/ikebukuro.html</loc><lastmod>2026-11-08</lastmod></url>
 </urlset>
