@@ -1,0 +1,47 @@
+name: Rename uploaded files
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename uploaded files
+        run: |
+          move() {
+            if [ -f "$1" ]; then
+              mv -f "$1" "$2"
+              echo "renamed: $1 -> $2"
+            else
+              echo "skip: $1 not found"
+            fi
+          }
+          move ganpurafan-mai-dian-matupu-yi-bie-matome.html index.html
+          move jr.html kawasaki.html
+          move jr-2.html sakuragicho.html
+          move jr-3.html yokohama.html
+          move jrshang-ye-yi-ganpurafan-mai-dian-matupu.html ueno.html
+          move jrqiu-xie-yuan-yi-ganpurafan-mai-dian-matupu.html akihabara.html
+          move jrxin-su-yi-ganpurafan-mai-dian-matupu.html shinjuku.html
+          move jrshibui-gu-yi-ganpurafan-mai-dian-matupu.html shibuya.html
+          move jrchi-dai-yi-ganpurafan-mai-dian-matupu.html ikebukuro.html
+          move jrjin-mi-ting-yi-ganpurafan-mai-dian-matupu.html kinshicho.html
+          move jrshang-da-gang-yi-ganpurafan-mai-dian-matupu.html kamiooka.html
+          move jryu-du-gong-yi-ganpurafan-mai-dian-matupu.html utsunomiya.html
+          move sitemap-2026-11-11.xml sitemap.xml
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Rename uploaded files to final names"
+            git push
+          fi
