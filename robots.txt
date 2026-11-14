@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gunpla-map.github.io/gunpla-map/sitemap.xml
