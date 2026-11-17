@@ -263,6 +263,25 @@
   .tip{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
   .tip h3{margin:0 0 6px;font-size:15px;font-family:"Zen Kaku Gothic New",sans-serif}
   .tip p{margin:0;font-size:13.5px;color:var(--muted)}
+  /* Latest stock-report video (lite embed) */
+  .video-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;max-width:720px}
+  .video-area{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:17px;margin:0 0 10px;display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .video-area .date{font-family:"Noto Sans JP",sans-serif;font-size:12.5px;font-weight:700;color:var(--muted)}
+  .yt-lite{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+  .yt-lite img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .yt-lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt-play{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+  .yt-play span{width:64px;height:46px;border-radius:12px;background:rgba(193,39,45,.95);display:flex;align-items:center;justify-content:center;transition:transform .15s ease}
+  .yt-play svg{width:26px;height:26px;fill:#fff;margin-left:3px}
+  .yt-play:hover span,.yt-play:focus-visible span{transform:scale(1.07)}
+  .video-title{font-size:13.5px;line-height:1.65;margin:12px 0 0;color:var(--ink)}
+  /* Area navigation */
+  .area-nav{display:flex;flex-wrap:wrap;gap:8px}
+  .area-nav a{display:inline-flex;align-items:center;text-decoration:none;font-size:13.5px;font-weight:700;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+  .area-nav a:hover{border-color:var(--navy);color:var(--navy2)}
+  .area-nav a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){.area-nav a[aria-current="page"]{background:#2b4a73;border-color:#2b4a73}}
+  .updated-line{font-size:13px;color:var(--muted);margin:0 0 14px}
   /* Ad (Rakuten affiliate) */
   .ad-disclosure{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.03em}
   .ad-widget{text-align:center;overflow-x:auto;padding:6px 0 2px}
@@ -366,6 +385,19 @@
       <p>ヨドバシカメラ マルチメディア池袋は5Fのプラモデルコーナーの棚の長さが公式Xでも話題になった大型店、LABI池袋本店は6Fに「国内有数のプラモデルの品ぞろえ」をうたうガンダムコーナーを構えます。新作・再販の物量勝負はこの2店が軸です。</p>
     </div>
   </div>
+
+  <section id="latest-video" aria-labelledby="latest-video-title">
+    <h2 id="latest-video-title">池袋エリアの最新の在庫速報動画</h2>
+    <p class="sec-lead">このエリアの最新の【ガンプラ在庫速報】です。サムネイルを押すと、その場で動画が再生されます。</p>
+    <div class="video-card">
+      <p class="video-area">池袋<span class="date">公開日：2026年10月25日</span></p>
+      <div class="yt-lite" data-videoid="-kY2fXbgYz8">
+        <img src="https://i.ytimg.com/vi/-kY2fXbgYz8/hqdefault.jpg" alt="【ガンプラ在庫速報】 池袋駅周辺 ヨドバシカメラ 2026年10月25日 再販情報 午後1時00分 販売状況 ガンプラのサムネイル" width="480" height="360" loading="lazy" />
+        <button class="yt-play" type="button" aria-label="池袋の最新動画を再生する"><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></button>
+      </div>
+      <p class="video-title">【ガンプラ在庫速報】 池袋駅周辺 ヨドバシカメラ 2026年10月25日 再販情報 午後1時00分 販売状況 ガンプラ</p>
+    </div>
+  </section>
 
   <section id="stores">
     <h2>池袋駅周辺のガンプラ販売店一覧</h2>
@@ -606,11 +638,31 @@
     <h2>ネットでガンプラを探す</h2>
     <p class="ad-disclosure">広告（楽天アフィリエイト）</p>
     <div class="ad-widget">
-<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="02dfc18b.b731e2fb.093d3b0e.d1ab4a5b";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="728x90";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="off";rakuten_ts="1762318154620";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="02dfc18b.b731e2fb.093d3b0e.d1ab4a5b";rakuten_items="ranking";rakuten_genreId="566483";rakuten_size="728x90";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="off";rakuten_ts="1762318154620";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
     </div>
   </section>
 
+  <section aria-labelledby="area-nav-title">
+    <h2 id="area-nav-title">他のエリアのガンプラ販売店マップ</h2>
+    <p class="sec-lead">全12エリアのマップはこちらからご覧いただけます。</p>
+    <nav class="area-nav" aria-label="他エリアへのリンク">
+      <a href="https://gunpla-map.github.io/gunpla-map/kawasaki.html" target="_blank" rel="noopener">川崎</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/sakuragicho.html" target="_blank" rel="noopener">桜木町</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/yokohama.html" target="_blank" rel="noopener">横浜</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/ueno.html" target="_blank" rel="noopener">上野</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/akihabara.html" target="_blank" rel="noopener">秋葉原</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/shinjuku.html" target="_blank" rel="noopener">新宿</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/shibuya.html" target="_blank" rel="noopener">渋谷</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/ikebukuro.html" target="_blank" rel="noopener" aria-current="page">池袋</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/kamiooka.html" target="_blank" rel="noopener">上大岡</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/kinshicho.html" target="_blank" rel="noopener">錦糸町</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/utsunomiya.html" target="_blank" rel="noopener">宇都宮</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/omori.html" target="_blank" rel="noopener">大森</a>
+    </nav>
+  </section>
+
   <footer>
+    <p class="updated-line">最終更新日：2026年11月17日</p>
     <p><strong>ご注意：</strong>情報は2026年11月時点のものです。営業時間など最新情報は各店舗の公式サイトでご確認ください。ガンプラの在庫状況は店舗・時期によって異なります。</p>
     <p style="margin-top:14px"><strong>情報源（各店舗の公式ページ）</strong></p>
     <ul>
@@ -733,6 +785,22 @@
     showMapFallback();
   }
 })();
+</script>
+<script>
+document.querySelectorAll('.yt-lite').forEach(function(box){
+  var btn = box.querySelector('.yt-play');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var id = box.getAttribute('data-videoid');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+    iframe.title = 'YouTube動画プレーヤー';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('allowfullscreen', '');
+    box.textContent = '';
+    box.appendChild(iframe);
+  });
+});
 </script>
 </body>
 </html>

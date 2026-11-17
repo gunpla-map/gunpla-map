@@ -207,6 +207,24 @@ dd a{font-weight:700;text-decoration:none}
 .tip{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 .tip h3{margin:0 0 6px;font-size:15px;font-family:"Zen Kaku Gothic New",sans-serif}
 .tip p{margin:0;font-size:13.5px;color:var(--muted)}
+.last-updated{margin:10px 0 0;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.03em}
+/* Latest video (lightweight embed) */
+.video-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.yt-facade{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;cursor:pointer;background:#000;aspect-ratio:16/9}
+.yt-facade img{display:block;width:100%;height:100%;object-fit:cover}
+.yt-facade .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.18)}
+.yt-facade .yt-play span{width:68px;height:48px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.yt-facade .yt-play svg{width:26px;height:26px;fill:#fff;margin-left:3px}
+.yt-facade:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.yt-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;display:block;background:#000}
+.video-title{margin:14px 0 2px;font-weight:700;font-size:15.5px;line-height:1.6}
+.video-meta{margin:0;font-size:13px;color:var(--muted)}
+.video-meta a{font-weight:700}
+/* Area nav */
+.area-nav{display:flex;flex-wrap:wrap;gap:8px}
+.area-nav a{display:inline-flex;align-items:center;text-decoration:none;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.area-nav a[aria-current="page"]{background:var(--navy);border-color:var(--navy);color:#fff}
+@media (prefers-color-scheme: dark){.area-nav a[aria-current="page"]{background:#2b4a73;border-color:#2b4a73}}
 /* Affiliate ad */
 .ad-label{font-size:11.5px;color:var(--muted);margin:0 0 12px}
 .ad-widget{display:flex;justify-content:center;max-width:100%;overflow:hidden}
@@ -236,6 +254,7 @@ footer a{word-break:break-all}
 <span class="badge red">ガンプラ販売店 2店</span>
 </div>
 <h1><span class="station">上大岡駅</span>ガンプラ販売店マップ</h1>
+<p class="last-updated">最終更新日：<time datetime="2026-11-17">2026年11月17日</time></p>
 <p class="lead">上大岡は、京急本線と横浜市営地下鉄ブルーラインが乗り入れる横浜市南部のターミナル駅です。ガンプラが買える店は駅前の家電量販店2店に集まっていて、どちらも駅から徒歩すぐ。モデルコースは、駅直結の京急百貨店に入るヨドバシカメラから始めて、駅前商業施設ミオカのヤマダデンキ LABI上大岡へ回る順番です。</p>
 <div class="stats">
 <div class="stat"><b>2店</b><span>掲載店舗</span></div>
@@ -310,6 +329,19 @@ footer a{word-break:break-all}
 <p>2店とも10:00〜21:00で営業時間が揃っています。新作発売日や再販日は、開店直後に2店をはしごするのが上大岡の基本形です。ヨドバシカメラは元日のみ休業です。</p>
 </div>
 </div>
+
+  <section id="latest-video">
+    <h2>上大岡エリアの最新の在庫速報動画</h2>
+    <p class="sec-lead">このエリアの掲載店を実際に巡った、最新の【ガンプラ在庫速報】です。サムネイルを押すと動画が再生されます。</p>
+    <div class="video-card">
+      <button type="button" class="yt-facade" data-embed="https://www.youtube-nocookie.com/embed/rePkTWMs2I8?autoplay=1" aria-label="動画を再生する：【ガンプラ在庫速報】 上大岡駅周辺 ヨドバシカメラ 2026年11月4日 再販情報 午後7時00分 販売状況 ガンプラ">
+        <img src="https://i.ytimg.com/vi/rePkTWMs2I8/hqdefault.jpg" alt="【ガンプラ在庫速報】 上大岡駅周辺 ヨドバシカメラ 2026年11月4日 再販情報 午後7時00分 販売状況 ガンプラ のサムネイル" width="480" height="360" loading="lazy" />
+        <span class="yt-play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span></span>
+      </button>
+      <p class="video-title">【ガンプラ在庫速報】 上大岡駅周辺 ヨドバシカメラ 2026年11月4日 再販情報 午後7時00分 販売状況 ガンプラ</p>
+      <p class="video-meta">公開日：2026年11月4日 ・ <a href="https://www.youtube.com/watch?v=rePkTWMs2I8" target="_blank" rel="noopener">YouTubeで開く</a></p>
+    </div>
+  </section>
 
   <section id="stores">
     <h2>上大岡駅周辺のガンプラ販売店一覧</h2>
@@ -444,8 +476,27 @@ footer a{word-break:break-all}
     <h2>ネットでガンプラを探す</h2>
     <p class="ad-label">広告（楽天アフィリエイト）</p>
     <div class="ad-widget">
-<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="02dfc18b.b731e2fb.093d3b0e.d1ab4a5b";rakuten_items="ctsmatch";rakuten_genreId="0";rakuten_size="728x90";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="off";rakuten_ts="1762318154620";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+<script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="02dfc18b.b731e2fb.093d3b0e.d1ab4a5b";rakuten_items="ranking";rakuten_genreId="566483";rakuten_size="728x90";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="off";rakuten_ts="1762318154620";</script><script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
     </div>
+  </section>
+
+  <section id="areas">
+    <h2>他のエリアのガンプラ販売店マップ</h2>
+    <p class="sec-lead">全12エリアの駅別マップです。お出かけ先のエリアもあわせてご覧ください。</p>
+    <nav class="area-nav" aria-label="エリア別マップへのリンク">
+      <a href="https://gunpla-map.github.io/gunpla-map/kawasaki.html" target="_blank" rel="noopener">川崎</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/sakuragicho.html" target="_blank" rel="noopener">桜木町</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/yokohama.html" target="_blank" rel="noopener">横浜</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/ueno.html" target="_blank" rel="noopener">上野</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/akihabara.html" target="_blank" rel="noopener">秋葉原</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/shinjuku.html" target="_blank" rel="noopener">新宿</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/shibuya.html" target="_blank" rel="noopener">渋谷</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/ikebukuro.html" target="_blank" rel="noopener">池袋</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/kamiooka.html" target="_blank" rel="noopener" aria-current="page">上大岡</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/kinshicho.html" target="_blank" rel="noopener">錦糸町</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/utsunomiya.html" target="_blank" rel="noopener">宇都宮</a>
+      <a href="https://gunpla-map.github.io/gunpla-map/omori.html" target="_blank" rel="noopener">大森</a>
+    </nav>
   </section>
 
   <footer>
@@ -458,7 +509,7 @@ footer a{word-break:break-all}
       <li>ミオカ（LABI上大岡 フロア案内） — <a href="https://mioka.jp/shop_guide/01-b101/" target="_blank" rel="noopener">https://mioka.jp/shop_guide/01-b101/</a></li>
     </ul>
     <p style="margin-top:16px">掲載写真の出典：駅写真＝Amebaブログ記事より、チャンネルバナー・アイコン＝YouTubeチャンネル「ガンプラ4コマ漫画」</p>
-    <p style="margin-top:10px"><a href="https://gunpla-map.github.io/gunpla-map/" target="_blank" rel="noopener"><strong>ガンプラ販売店マップ（駅別まとめ）トップページ</strong></a>から、横浜・桜木町・川崎・秋葉原・新宿・渋谷・池袋・上野の各エリアもご覧いただけます。</p>
+    <p style="margin-top:10px"><a href="https://gunpla-map.github.io/gunpla-map/" target="_blank" rel="noopener"><strong>ガンプラ販売店マップ（駅別まとめ）トップページ</strong></a>から、川崎・桜木町・横浜・上野・秋葉原・新宿・渋谷・池袋・上大岡・錦糸町・宇都宮・大森の全12エリアもご覧いただけます。</p>
     <p style="margin-top:10px">上大岡駅ガンプラ販売店マップ ・ 運営：<a href="https://www.youtube.com/channel/UCE-hWQY6LLGWty2geizhjGA?sub_confirmation=1" target="_blank" rel="noopener">YouTubeチャンネル「ガンプラ4コマ漫画」</a></p>
   </footer>
 
@@ -467,6 +518,19 @@ footer a{word-break:break-all}
 <script src="data:application/javascript;base64,dmFyIE1hcEhlbHBlcnMgPSAoKCkgPT4gewogIHZhciBfX2RlZlByb3AgPSBPYmplY3QuZGVmaW5lUHJvcGVydHk7CiAgdmFyIF9fZ2V0T3duUHJvcERlc2MgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yOwogIHZhciBfX2dldE93blByb3BOYW1lcyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eU5hbWVzOwogIHZhciBfX2hhc093blByb3AgPSBPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5OwogIHZhciBfX2V4cG9ydCA9ICh0YXJnZXQsIGFsbCkgPT4gewogICAgZm9yICh2YXIgbmFtZSBpbiBhbGwpCiAgICAgIF9fZGVmUHJvcCh0YXJnZXQsIG5hbWUsIHsgZ2V0OiBhbGxbbmFtZV0sIGVudW1lcmFibGU6IHRydWUgfSk7CiAgfTsKICB2YXIgX19jb3B5UHJvcHMgPSAodG8sIGZyb20sIGV4Y2VwdCwgZGVzYykgPT4gewogICAgaWYgKGZyb20gJiYgdHlwZW9mIGZyb20gPT09ICJvYmplY3QiIHx8IHR5cGVvZiBmcm9tID09PSAiZnVuY3Rpb24iKSB7CiAgICAgIGZvciAobGV0IGtleSBvZiBfX2dldE93blByb3BOYW1lcyhmcm9tKSkKICAgICAgICBpZiAoIV9faGFzT3duUHJvcC5jYWxsKHRvLCBrZXkpICYmIGtleSAhPT0gZXhjZXB0KQogICAgICAgICAgX19kZWZQcm9wKHRvLCBrZXksIHsgZ2V0OiAoKSA9PiBmcm9tW2tleV0sIGVudW1lcmFibGU6ICEoZGVzYyA9IF9fZ2V0T3duUHJvcERlc2MoZnJvbSwga2V5KSkgfHwgZGVzYy5lbnVtZXJhYmxlIH0pOwogICAgfQogICAgcmV0dXJuIHRvOwogIH07CiAgdmFyIF9fdG9Db21tb25KUyA9IChtb2QpID0+IF9fY29weVByb3BzKF9fZGVmUHJvcCh7fSwgIl9fZXNNb2R1bGUiLCB7IHZhbHVlOiB0cnVlIH0pLCBtb2QpOwoKICAvLyAuLi9zY3JpcHRzL21hcF9oZWxwZXJzLm1qcwogIHZhciBtYXBfaGVscGVyc19leHBvcnRzID0ge307CiAgX19leHBvcnQobWFwX2hlbHBlcnNfZXhwb3J0cywgewogICAgYnVpbGRTdGF0aWNNYXBVcmw6ICgpID0+IGJ1aWxkU3RhdGljTWFwVXJsLAogICAgaGVhdG1hcE92ZXJsYXk6ICgpID0+IGhlYXRtYXBPdmVybGF5LAogICAgbWFwc0RpcmVjdGlvbnNVcmw6ICgpID0+IG1hcHNEaXJlY3Rpb25zVXJsLAogICAgbWFwc1NlYXJjaFVybDogKCkgPT4gbWFwc1NlYXJjaFVybCwKICAgIG1vdW50Q2hvcm9wbGV0aDogKCkgPT4gbW91bnRDaG9yb3BsZXRoLAogICAgbW91bnRNYXA6ICgpID0+IG1vdW50TWFwLAogICAgbW91bnRQbGFjZUxpc3RNYXA6ICgpID0+IG1vdW50UGxhY2VMaXN0TWFwCiAgfSk7CiAgdmFyIFNUQVRJQ19NQVBfQkFTRSA9ICJodHRwczovL2V4dGVybmFsLnh4LmZiY2RuLm5ldC9zdGF0aWNfbWFwLnBocCI7CiAgZnVuY3Rpb24gYnVpbGRTdGF0aWNNYXBVcmwob3B0cykgewogICAgY29uc3QgcGFyYW1zID0gbmV3IFVSTFNlYXJjaFBhcmFtcygpOwogICAgcGFyYW1zLnNldCgidiIsICIyMDY3Iik7CiAgICBwYXJhbXMuc2V0KCJjY2IiLCAiNC00Iik7CiAgICBwYXJhbXMuc2V0KCJjZW50ZXIiLCBgJHtvcHRzLmNlbnRlclswXX0sJHtvcHRzLmNlbnRlclsxXX1gKTsKICAgIHBhcmFtcy5zZXQoInpvb20iLCBTdHJpbmcob3B0cy56b29tKSk7CiAgICBwYXJhbXMuc2V0KCJzaXplIiwgYCR7b3B0cy53aWR0aCA/PyA0MDB9eCR7b3B0cy5oZWlnaHQgPz8gNDAwfWApOwogICAgaWYgKG9wdHMuc2NhbGUgIT0gbnVsbCkgcGFyYW1zLnNldCgic2NhbGUiLCBTdHJpbmcob3B0cy5zY2FsZSkpOwogICAgaWYgKG9wdHMuZm9ybWF0KSBwYXJhbXMuc2V0KCJmb3JtYXQiLCBvcHRzLmZvcm1hdCk7CiAgICBpZiAob3B0cy50aGVtZSkgcGFyYW1zLnNldCgidGhlbWUiLCBvcHRzLnRoZW1lKTsKICAgIGlmIChvcHRzLmxhbmd1YWdlKSBwYXJhbXMuc2V0KCJsYW5ndWFnZSIsIG9wdHMubGFuZ3VhZ2UpOwogICAgaWYgKG9wdHMucmVnaW9uKSBwYXJhbXMuc2V0KCJyZWdpb24iLCBvcHRzLnJlZ2lvbik7CiAgICBwYXJhbXMuc2V0KCJzaG93X2F0dHJpYnV0aW9uIiwgIjEiKTsKICAgIHBhcmFtcy5zZXQoIl9uY19jbGllbnRfY2FsbGVyIiwgIk11c2VfQXJ0aWZhY3QiKTsKICAgIHBhcmFtcy5zZXQoIl9uY19jbGllbnRfaWQiLCAiYXJ0aWZhY3Rfc3RhdGljIik7CiAgICBpZiAob3B0cy5tYXJrZXJzPy5sZW5ndGgpIHsKICAgICAgcGFyYW1zLnNldCgibWFya2VycyIsIG9wdHMubWFya2Vycy5tYXAoKG0pID0+IFsKICAgICAgICAuLi5tLnNjYWxlICYmIG0uc2NhbGUgIT09IDEgPyBbYHNjYWxlOiR7bS5zY2FsZX1gXSA6IFtdLAogICAgICAgIGAke20ucG9zaXRpb25bMF19LCR7bS5wb3NpdGlvblsxXX1gCiAgICAgIF0uam9pbigifCIpKS5qb2luKCJ8IikpOwogICAgfQogICAgcmV0dXJuIGAke1NUQVRJQ19NQVBfQkFTRX0/JHtwYXJhbXMudG9TdHJpbmcoKX1gOwogIH0KICBmdW5jdGlvbiBwbGFjZVF1ZXJ5KHBsYWNlKSB7CiAgICBjb25zdCBwYXJ0cyA9IFtdOwogICAgY29uc3QgYWxyZWFkeVNhaWQgPSAoaGF5c3RhY2ssIG5lZWRsZSkgPT4gewogICAgICBjb25zdCBlc2NhcGVkID0gbmVlZGxlLnJlcGxhY2UoL1suKis/XiR7fSgpfFtcXVxcXS9nLCAiXFwkJiIpOwogICAgICByZXR1cm4gbmV3IFJlZ0V4cChgKF58W15hLXowLTldKSR7ZXNjYXBlZH0oW15hLXowLTldfCQpYCwgImkiKS50ZXN0KGhheXN0YWNrKTsKICAgIH07CiAgICBmb3IgKGNvbnN0IHJhdyBvZiBbCiAgICAgIHBsYWNlLnZlbnVlIHx8IHBsYWNlLmxhYmVsLAogICAgICBwbGFjZS5hZGRyZXNzLAogICAgICBwbGFjZS5sb2NhbGl0eSwKICAgICAgcGxhY2UucmVnaW9uLAogICAgICBwbGFjZS5jb3VudHJ5CiAgICBdKSB7CiAgICAgIGNvbnN0IHZhbHVlID0gKHJhdyB8fCAiIikudHJpbSgpOwogICAgICBpZiAoIXZhbHVlKSBjb250aW51ZTsKICAgICAgaWYgKGFscmVhZHlTYWlkKHBhcnRzLmpvaW4oIiwgIiksIHZhbHVlKSkgY29udGludWU7CiAgICAgIHBhcnRzLnB1c2godmFsdWUpOwogICAgfQogICAgcmV0dXJuIHBhcnRzLmpvaW4oIiwgIik7CiAgfQogIGZ1bmN0aW9uIHBsYWNlVGFyZ2V0KHBsYWNlKSB7CiAgICBjb25zdCBuYW1lID0gKHBsYWNlLnZlbnVlIHx8IHBsYWNlLmxhYmVsIHx8ICIiKS50cmltKCk7CiAgICBjb25zdCBoYXNMb2NhdG9yID0gQm9vbGVhbigKICAgICAgcGxhY2UuYWRkcmVzcyAmJiBwbGFjZS5hZGRyZXNzLnRyaW0oKSB8fCBwbGFjZS5sb2NhbGl0eSAmJiBwbGFjZS5sb2NhbGl0eS50cmltKCkKICAgICk7CiAgICBpZiAobmFtZSAmJiBoYXNMb2NhdG9yKSByZXR1cm4gcGxhY2VRdWVyeShwbGFjZSk7CiAgICBpZiAodHlwZW9mIHBsYWNlLmxhdCA9PT0gIm51bWJlciIgJiYgdHlwZW9mIHBsYWNlLmxuZyA9PT0gIm51bWJlciIpIHsKICAgICAgcmV0dXJuIGAke3BsYWNlLmxhdH0sJHtwbGFjZS5sbmd9YDsKICAgIH0KICAgIHJldHVybiBwbGFjZVF1ZXJ5KHBsYWNlKTsKICB9CiAgZnVuY3Rpb24gaXNDb29yZGluYXRlUGFpcih2YWx1ZSkgewogICAgcmV0dXJuIC9eLT9cZCsoPzpcLlxkKyk/LC0/XGQrKD86XC5cZCspPyQvLnRlc3QodmFsdWUudHJpbSgpKTsKICB9CiAgZnVuY3Rpb24gZW5jb2RlTWFwc1ZhbHVlKHZhbHVlKSB7CiAgICBjb25zdCB0cmltbWVkID0gdmFsdWUudHJpbSgpOwogICAgaWYgKGlzQ29vcmRpbmF0ZVBhaXIodHJpbW1lZCkpIHJldHVybiB0cmltbWVkOwogICAgcmV0dXJuIGVuY29kZVVSSUNvbXBvbmVudCh0cmltbWVkKTsKICB9CiAgZnVuY3Rpb24gbWFwc1VybChiYXNlLCBwYXJhbXMpIHsKICAgIGNvbnN0IHF1ZXJ5ID0gT2JqZWN0LmVudHJpZXMocGFyYW1zKS5maWx0ZXIoKGVudHJ5KSA9PiBCb29sZWFuKGVudHJ5WzFdKSkubWFwKChba2V5LCB2YWx1ZV0pID0+IGAke2VuY29kZVVSSUNvbXBvbmVudChrZXkpfT0ke2VuY29kZU1hcHNWYWx1ZSh2YWx1ZSl9YCkuam9pbigiJiIpOwogICAgcmV0dXJuIGAke2Jhc2V9PyR7cXVlcnl9YDsKICB9CiAgZnVuY3Rpb24gbWFwc1NlYXJjaFVybChwbGFjZSkgewogICAgY29uc3QgcXVlcnkgPSBwbGFjZVRhcmdldChwbGFjZSk7CiAgICBpZiAoIXF1ZXJ5KSByZXR1cm4gbnVsbDsKICAgIHJldHVybiBtYXBzVXJsKCJodHRwczovL3d3dy5nb29nbGUuY29tL21hcHMvc2VhcmNoLyIsIHsKICAgICAgYXBpOiAiMSIsCiAgICAgIHF1ZXJ5CiAgICB9KTsKICB9CiAgZnVuY3Rpb24gbWFwc0RpcmVjdGlvbnNVcmwoZGVzdGluYXRpb24sIG9wdGlvbnMgPSB7fSkgewogICAgY29uc3QgZGVzdGluYXRpb25WYWx1ZSA9IHBsYWNlVGFyZ2V0KGRlc3RpbmF0aW9uKTsKICAgIGlmICghZGVzdGluYXRpb25WYWx1ZSkgcmV0dXJuIG51bGw7CiAgICByZXR1cm4gbWFwc1VybCgiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9tYXBzL2Rpci8iLCB7CiAgICAgIGFwaTogIjEiLAogICAgICBkZXN0aW5hdGlvbjogZGVzdGluYXRpb25WYWx1ZSwKICAgICAgb3JpZ2luOiBvcHRpb25zLm9yaWdpbiA/IGAke29wdGlvbnMub3JpZ2luLmxhdH0sJHtvcHRpb25zLm9yaWdpbi5sbmd9YCA6IHZvaWQgMCwKICAgICAgdHJhdmVsbW9kZTogb3B0aW9ucy50cmF2ZWxtb2RlCiAgICB9KTsKICB9CiAgZnVuY3Rpb24gbW91bnRNYXAoY29udGFpbmVyLCBvcHRpb25zLCBvblVuYXZhaWxhYmxlKSB7CiAgICBjb25zdCB7IHN1cHBvcnRlZCB9ID0gZ2xvYmFsVGhpcy5IYXRjaE1hcHMuaXNNZXRhTWFwU3VwcG9ydGVkKCk7CiAgICBpZiAoIXN1cHBvcnRlZCkgewogICAgICBvblVuYXZhaWxhYmxlKCk7CiAgICAgIHJldHVybiBudWxsOwogICAgfQogICAgcmV0dXJuIGdsb2JhbFRoaXMuSGF0Y2hNYXBzLm1vdW50TWFwKGNvbnRhaW5lciwgewogICAgICAuLi5vcHRpb25zLAogICAgICBjbGllbnRJZDogImFydGlmYWN0X3dlYiIsCiAgICAgIG9uRmF0YWxFcnJvcjogb25VbmF2YWlsYWJsZQogICAgfSk7CiAgfQogIGZ1bmN0aW9uIG1vdW50UGxhY2VMaXN0TWFwKGNvbnRhaW5lciwgb3B0aW9ucywgb25VbmF2YWlsYWJsZSkgewogICAgY29uc3QgeyByb3dzLCBzZWxlY3RlZENsYXNzID0gIm1hcC1zZWxlY3RlZCIsIC4uLm1hcE9wdGlvbnMgfSA9IG9wdGlvbnM7CiAgICBjb25zdCBoaWdobGlnaHQgPSAoaW5kZXgsIHNjcm9sbCkgPT4gewogICAgICByb3dzLmZvckVhY2goKHJvdywgaSkgPT4gcm93LmNsYXNzTGlzdC50b2dnbGUoc2VsZWN0ZWRDbGFzcywgaSA9PT0gaW5kZXgpKTsKICAgICAgaWYgKHNjcm9sbCAmJiBpbmRleCAhPT0gbnVsbCkgewogICAgICAgIHJvd3NbaW5kZXhdLnNjcm9sbEludG9WaWV3KHsgYmxvY2s6ICJuZWFyZXN0IiB9KTsKICAgICAgfQogICAgfTsKICAgIGNvbnN0IG1hcCA9IG1vdW50TWFwKGNvbnRhaW5lciwgewogICAgICAuLi5tYXBPcHRpb25zLAogICAgICBtYXJrZXI6IChfcGxhY2UsIGluZGV4LCBzZWxlY3RlZCkgPT4gYDxkaXYgY2xhc3M9InBpbiR7c2VsZWN0ZWQgPyAiIHBpbi0tb24iIDogIiJ9Ij4ke2luZGV4ICsgMX08L2Rpdj5gLAogICAgICBvblNlbGVjdFBsYWNlOiAoaW5kZXgpID0+IGhpZ2hsaWdodChpbmRleCwgdHJ1ZSkKICAgIH0sIG9uVW5hdmFpbGFibGUpOwogICAgaWYgKG1hcCA9PT0gbnVsbCkgcmV0dXJuIG51bGw7CiAgICByb3dzLmZvckVhY2goKHJvdywgaW5kZXgpID0+IHsKICAgICAgcm93LmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwgKCkgPT4gewogICAgICAgIG1hcC5zZWxlY3RQbGFjZShpbmRleCk7CiAgICAgICAgaGlnaGxpZ2h0KGluZGV4LCBmYWxzZSk7CiAgICAgIH0pOwogICAgfSk7CiAgICByZXR1cm4gbWFwOwogIH0KICBmdW5jdGlvbiBoZWF0bWFwT3ZlcmxheShpZCwgZGF0YSwgY29sb3JTdG9wcywgcmFkaXVzID0gMjApIHsKICAgIHJldHVybiB7CiAgICAgIGlkLAogICAgICBkYXRhLAogICAgICBsYXllcnM6IFt7CiAgICAgICAgaWQ6IGAke2lkfS1kZW5zaXR5YCwKICAgICAgICB0eXBlOiAiaGVhdG1hcCIsCiAgICAgICAgc291cmNlOiBpZCwKICAgICAgICBwYWludDogewogICAgICAgICAgImhlYXRtYXAtcmFkaXVzIjogcmFkaXVzLAogICAgICAgICAgImhlYXRtYXAtY29sb3IiOiBbImludGVycG9sYXRlIiwgWyJsaW5lYXIiXSwgWyJoZWF0bWFwLWRlbnNpdHkiXSwgLi4uY29sb3JTdG9wc10KICAgICAgICB9CiAgICAgIH1dCiAgICB9OwogIH0KICBhc3luYyBmdW5jdGlvbiBtb3VudENob3JvcGxldGgoY29udGFpbmVyLCBvcHRpb25zLCBvblVuYXZhaWxhYmxlKSB7CiAgICBjb25zdCB7CiAgICAgIGJvdW5kYXJ5VXJsLAogICAgICByb3dzLAogICAgICBmZWF0dXJlS2V5LAogICAgICByb3dLZXksCiAgICAgIHZhbHVlS2V5LAogICAgICBjb2xvclN0b3BzLAogICAgICBvdXRsaW5lQ29sb3IsCiAgICAgIG1pc3NpbmdMYWJlbCA9ICJubyBkYXRhIiwKICAgICAgdG9vbHRpcCwKICAgICAgLi4ubWFwT3B0aW9ucwogICAgfSA9IG9wdGlvbnM7CiAgICBjb25zdCB7IHN1cHBvcnRlZCB9ID0gZ2xvYmFsVGhpcy5IYXRjaE1hcHMuaXNNZXRhTWFwU3VwcG9ydGVkKCk7CiAgICBpZiAoIXN1cHBvcnRlZCkgewogICAgICBvblVuYXZhaWxhYmxlKCk7CiAgICAgIHJldHVybiBudWxsOwogICAgfQogICAgbGV0IGdlb21ldHJ5OwogICAgdHJ5IHsKICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChib3VuZGFyeVVybCk7CiAgICAgIGlmICghcmVzcG9uc2Uub2spIHRocm93IG5ldyBFcnJvcihgQm91bmRhcnkgZmV0Y2ggZmFpbGVkOiAke3Jlc3BvbnNlLnN0YXR1c31gKTsKICAgICAgZ2VvbWV0cnkgPSBhd2FpdCByZXNwb25zZS5qc29uKCk7CiAgICB9IGNhdGNoIHsKICAgICAgb25VbmF2YWlsYWJsZSgpOwogICAgICByZXR1cm4gbnVsbDsKICAgIH0KICAgIGNvbnN0IHZhbHVlcyA9IG5ldyBNYXAocm93cy5tYXAoKHJvdykgPT4gW3Jvd1tyb3dLZXldLCByb3dbdmFsdWVLZXldXSkpOwogICAgZm9yIChjb25zdCBmZWF0dXJlIG9mIGdlb21ldHJ5LmZlYXR1cmVzKSB7CiAgICAgIGZlYXR1cmUucHJvcGVydGllcy52YWx1ZSA9IHZhbHVlcy5nZXQoZmVhdHVyZS5wcm9wZXJ0aWVzW2ZlYXR1cmVLZXldKSA/PyBudWxsOwogICAgfQogICAgcmV0dXJuIG1vdW50TWFwKGNvbnRhaW5lciwgewogICAgICAuLi5tYXBPcHRpb25zLAogICAgICBiYXNlU3R5bGU6ICJncmF5c2NhbGUiLAogICAgICB0b29sdGlwOiB0b29sdGlwID8/ICgoZmVhdHVyZSkgPT4gYCR7ZmVhdHVyZS5wcm9wZXJ0aWVzLm5hbWV9OiAke2ZlYXR1cmUucHJvcGVydGllcy52YWx1ZSA/PyBtaXNzaW5nTGFiZWx9YCksCiAgICAgIG92ZXJsYXlzOiBbewogICAgICAgIGlkOiAicmVnaW9ucyIsCiAgICAgICAgZGF0YTogZ2VvbWV0cnksCiAgICAgICAgbGF5ZXJzOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAicmVnaW9ucy1maWxsIiwKICAgICAgICAgICAgdHlwZTogImZpbGwiLAogICAgICAgICAgICBzb3VyY2U6ICJyZWdpb25zIiwKICAgICAgICAgICAgZmlsdGVyOiBbIiE9IiwgWyJnZXQiLCAidmFsdWUiXSwgbnVsbF0sCiAgICAgICAgICAgIHBhaW50OiB7CiAgICAgICAgICAgICAgImZpbGwtY29sb3IiOiBbImludGVycG9sYXRlIiwgWyJsaW5lYXIiXSwgWyJnZXQiLCAidmFsdWUiXSwgLi4uY29sb3JTdG9wc10sCiAgICAgICAgICAgICAgImZpbGwtb3BhY2l0eSI6IDAuNDUKICAgICAgICAgICAgfQogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICJyZWdpb25zLW91dGxpbmUiLAogICAgICAgICAgICB0eXBlOiAibGluZSIsCiAgICAgICAgICAgIHNvdXJjZTogInJlZ2lvbnMiLAogICAgICAgICAgICBwYWludDogeyAibGluZS1jb2xvciI6IG91dGxpbmVDb2xvciwgImxpbmUtd2lkdGgiOiAxIH0KICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH1dCiAgICB9LCBvblVuYXZhaWxhYmxlKTsKICB9CiAgcmV0dXJuIF9fdG9Db21tb25KUyhtYXBfaGVscGVyc19leHBvcnRzKTsKfSkoKTsK"></script>
 <script>
 (function(){
+  // Lightweight YouTube embed: swap the thumbnail facade for the player on click
+  document.querySelectorAll('.yt-facade').forEach(function(facade){
+    facade.addEventListener('click', function(){
+      var iframe = document.createElement('iframe');
+      iframe.className = 'yt-frame';
+      iframe.src = facade.getAttribute('data-embed');
+      iframe.title = '【ガンプラ在庫速報】 上大岡駅周辺 ヨドバシカメラ 2026年11月4日 再販情報 午後7時00分 販売状況 ガンプラ';
+      iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', '');
+      facade.replaceWith(iframe);
+    });
+  });
+
   // Filters
   var buttons = document.querySelectorAll('.filters button');
   var cards = document.querySelectorAll('#cards .card');
