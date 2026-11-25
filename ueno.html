@@ -246,6 +246,7 @@
   .area-nav a:hover{border-color:var(--navy);color:var(--navy2)}
   .area-nav a.current{background:var(--navy);border-color:var(--navy);color:#fff}
   @media (prefers-color-scheme: dark){.area-nav a.current{background:#2b4a73;border-color:#2b4a73}}
+  .area-nav a .here{font-size:11px;font-weight:700;opacity:.85}
   .area-nav a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
   .updated-line{font-size:13px;color:var(--muted);margin:0 0 14px}
 </style>
@@ -539,26 +540,20 @@
 
   <section id="areas">
     <h2>他のエリアのガンプラ販売店マップ</h2>
-    <p class="sec-lead">全13エリアの駅別マップはこちらからご覧いただけます。</p>
+    <p class="sec-lead">全32エリアのマップがあります。他のエリアは、トップページに県・地域ごとにまとめています。各リンク先から、エリアごとのマップページへ進めます（上野は「東京都」に含まれます）。</p>
     <nav class="area-nav" aria-label="他エリアへのリンク">
-      <a href="https://gunpla-map.github.io/gunpla-map/kawasaki.html" target="_blank" rel="noopener">川崎</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/sakuragicho.html" target="_blank" rel="noopener">桜木町</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/yokohama.html" target="_blank" rel="noopener">横浜</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/ueno.html" target="_blank" rel="noopener" class="current" aria-current="page">上野</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/akihabara.html" target="_blank" rel="noopener">秋葉原</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/shinjuku.html" target="_blank" rel="noopener">新宿</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/shibuya.html" target="_blank" rel="noopener">渋谷</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/ikebukuro.html" target="_blank" rel="noopener">池袋</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/kamiooka.html" target="_blank" rel="noopener">上大岡</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/kinshicho.html" target="_blank" rel="noopener">錦糸町</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/utsunomiya.html" target="_blank" rel="noopener">宇都宮</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/omori.html" target="_blank" rel="noopener">大森</a>
-      <a href="https://gunpla-map.github.io/gunpla-map/centerminami.html" target="_blank" rel="noopener">センター南</a>
+      <a href="./index.html#tokyo">東京都（7エリア）<span class="here">上野を含む</span></a>
+      <a href="./index.html#kanagawa">神奈川県・横浜市内（11エリア）</a>
+      <a href="./index.html#kanagawa">神奈川県・川崎市内（2エリア）</a>
+      <a href="./index.html#kanagawa">神奈川県・相模原・県央（6エリア）</a>
+      <a href="./index.html#kanagawa">神奈川県・湘南・県西（4エリア）</a>
+      <a href="./index.html#kanagawa">神奈川県・横須賀（1エリア）</a>
+      <a href="./index.html#tochigi">栃木県・宇都宮（1エリア）</a>
     </nav>
   </section>
 
   <footer>
-    <p class="updated-line">最終更新日：2026年11月23日</p>
+    <p class="updated-line">最終更新日：2026年11月25日</p>
     <p><strong>ご注意：</strong>情報は2026年11月時点のものです。営業時間など最新情報は各店舗の公式サイトでご確認ください。ガンプラの在庫状況は店舗・時期によって異なります。</p>
     <p style="margin-top:14px"><strong>情報源（各店舗の公式ページほか）</strong></p>
     <ul>
@@ -650,6 +645,7 @@
     var areaMap = MapHelpers.mountMap(mapEl, {
       places: mapPlaces,
       baseStyle: 'light',
+      locale: 'ja',
       marker: function(place, index, selected){
         var cls = 'pin' + (selected ? ' pin--on' : '') + (index === 3 ? ' pin--station' : '');
         return '<div class="' + cls + '">' + pinNums[index] + '</div>';
