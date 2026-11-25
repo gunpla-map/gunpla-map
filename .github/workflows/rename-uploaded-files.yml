@@ -15,7 +15,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git mv ganpurafan-mai-dian-matupu-yi-bie-matome.html index.html
-          git mv jrda-chuan-yi-ganpurafan-mai-dian-matupu.html ofuna.html
+          mv ganpurafan-mai-dian-matupu-yi-bie-matome.html index.html
+          mv jrda-chuan-yi-ganpurafan-mai-dian-matupu.html ofuna.html
+          git add -A
           git commit -m "Rename uploaded files to index.html and ofuna.html"
           git push
